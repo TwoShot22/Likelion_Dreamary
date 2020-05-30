@@ -7,3 +7,6 @@ def home(request):
 
 def introduce(request):
     return render(request, 'introduce.html')
+
+def new(request):
+    return render(request, 'new.html')
