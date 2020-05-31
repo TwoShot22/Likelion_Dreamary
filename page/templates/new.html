@@ -6,6 +6,20 @@
     <title>Register New Designer</title>
 </head>
 <body>
-    Register Page
+    <form action = "{% url 'create' %}" method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h4>이미지</h4>
+        <input type="file" name = "image" value = "">
+        <br>
+        <h4>제목 : </h4>
+        <input type="text" name = "name">
+        <br>
+        <h4>주소 : </h4>
+        <input type="text" name = "address">
+        <h4>설명 : </h4>
+        <textarea name="description" id="" cols="40" rows="10"></textarea>
+        <br>
+        <input type="submit" value="제출하기">
+    </form>
 </body>
 </html>
