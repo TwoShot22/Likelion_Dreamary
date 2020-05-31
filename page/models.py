@@ -8,3 +8,9 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.name
+
+    def summary(self):
+        if len(self.description) >= 40:
+            return self.description[:40] + str(" ...")
+        else:
+            return self.description

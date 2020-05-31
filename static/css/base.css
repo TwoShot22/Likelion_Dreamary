@@ -1,0 +1,12 @@
+#navbar{
+    display: flex;
+    justify-content : space-between;
+}
+
+label{
+    font-size : 25px;
+}
+
+footer{
+    padding-top: 1.5rem;
+}
