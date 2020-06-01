@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}
-Register New Designer
-{% endblock %}
+{% block title %}디자이너로 등록하기{% endblock %}
 
 {% block content %}
 <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">

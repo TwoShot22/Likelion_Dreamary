@@ -3,7 +3,12 @@
     justify-content : space-between;
 }
 
+#logo{
+    display: flex;
+}
+
 label{
+    margin-bottom: 0rem;
     font-size : 25px;
 }
 
