@@ -24,6 +24,29 @@ def create(request):
         post.name = request.POST['name']
         post.address = request.POST['address']
         post.description = request.POST['description']
+
         post.save()
         
         return redirect('/profile/' + str(post.id))
+
+def update(request, profile_id):
+    post = get_object_or_404(Profile, pk = profile_id)
+
+    if request.method == 'POST':
+        if 'image' in request.FILES:
+            post.image = request.FILES['image']
+        post.name = request.POST['name']
+        post.address = request.POST['address']
+        post.description = request.POST['description']
+
+        post.save()
+        return redirect('/profile/' + str(post.id))
+    
+    else:
+        return render(request, 'update.html', {'profile':post})
+
+def delete(request, profile_id):
+    post = get_object_or_404(Profile, pk = profile_id)
+    post.delete()
+
+    return redirect('home')
