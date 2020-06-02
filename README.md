@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to Likelion_Dreamary 👋</h1>
 <p align="center">
-  <img src="https://img.shields.io/badge/ver-1.0.0-blue" />
+  <img src="https://img.shields.io/badge/ver-1.1.0-blue" />
 </p>
 
 ## 📖 Introduction
