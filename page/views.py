@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Profile
+from .models import Designer
 
 # Create your views here.
 def home(request):
-    profiles = Profile.objects.all()
-    return render(request, 'home.html', {'profiles' : profiles})
+    designers = Designer.objects.all()
+    return render(request, 'home.html', {'designers' : designers})
 
-def detail(request, profile_id):
-    profile = get_object_or_404(Profile, pk = profile_id)
-    return render(request, 'detail.html', {'profile' : profile})
+def detail(request, designer_id):
+    designer = get_object_or_404(Designer, pk = designer_id)
+    return render(request, 'detail.html', {'designer' : designer})
 
 def introduce(request):
     return render(request, 'introduce.html')
@@ -18,7 +18,7 @@ def new(request):
 
 def create(request):
     if request.method == 'POST':
-        post = Profile()
+        post = Designer()
         if 'image' in request.FILES:
             post.image = request.FILES['image']
         post.name = request.POST['name']
@@ -29,8 +29,8 @@ def create(request):
         
         return redirect('/profile/' + str(post.id))
 
-def update(request, profile_id):
-    post = get_object_or_404(Profile, pk = profile_id)
+def update(request, designer_id):
+    post = get_object_or_404(Designer, pk = designer_id)
 
     if request.method == 'POST':
         if 'image' in request.FILES:
@@ -43,10 +43,10 @@ def update(request, profile_id):
         return redirect('/profile/' + str(post.id))
     
     else:
-        return render(request, 'update.html', {'profile':post})
+        return render(request, 'update.html', {'designer':post})
 
-def delete(request, profile_id):
-    post = get_object_or_404(Profile, pk = profile_id)
+def delete(request, designer_id):
+    post = get_object_or_404(Designer, pk = designer_id)
     post.delete()
 
     return redirect('home')

@@ -19,12 +19,12 @@
 <div class="album py-5 bg-light">
   <div class="container">
     <div class="card-columns">
-      {% for profile in profiles %}
+      {% for designer in designers %}
       <div class="card mb-4 shadow-sm">
         <!-- Image -->
-        <a href="{% url 'detail' profile.id %}">
-          {% if profile.image %}
-          <img src="{{ profile.image.url }}" class="card-img-top" alt="Designer_Image">
+        <a href="{% url 'detail' designer.id %}">
+          {% if designer.image %}
+          <img src="{{ designer.image.url }}" class="card-img-top" alt="Designer_Image">
           {% else %}
           <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
@@ -35,13 +35,13 @@
           {% endif %}
         </a>
         <div class="card-body">
-          <h4 class="card-title">{{ profile.name }}</h4>
-          <h6 class="card-text">{{ profile.address }}</h6>
+          <h4 class="card-title">{{ designer.name }}</h4>
+          <h6 class="card-text">{{ designer.address }}</h6>
           <hr>
-          <p class="card-text">{{ profile.summary }}</p>
+          <p class="card-text">{{ designer.summary }}</p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-              <a href="{% url 'detail' profile.id %}" class="btn btn-sm btn-outline-secondary">자세히 알아보기</a>
+              <a href="{% url 'detail' designer.id %}" class="btn btn-sm btn-outline-secondary">자세히 알아보기</a>
             </div>
           </div>
         </div>

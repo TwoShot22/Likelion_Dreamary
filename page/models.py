@@ -1,6 +1,6 @@
 from django.db import models
 
-class Profile(models.Model):
+class Designer(models.Model):
     image = models.ImageField(upload_to = 'images/')
     name = models.CharField(max_length = 50)
     address = models.CharField(max_length = 255)
