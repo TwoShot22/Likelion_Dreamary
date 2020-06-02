@@ -27,7 +27,7 @@ def create(request):
 
         post.save()
         
-        return redirect('/profile/' + str(post.id))
+        return redirect('detail', post.id)
 
 def update(request, designer_id):
     post = get_object_or_404(Designer, pk = designer_id)
@@ -40,7 +40,8 @@ def update(request, designer_id):
         post.description = request.POST['description']
 
         post.save()
-        return redirect('/profile/' + str(post.id))
+
+        return redirect('detail', post.id)
     
     else:
         return render(request, 'update.html', {'designer':post})
